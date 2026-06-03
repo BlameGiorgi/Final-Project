@@ -12,10 +12,6 @@ const requireAuth = (req, res, next) => {
 }
 
 
-function paginate(array, page_size, page_number) {
-    return array.slice((page_number - 1) * page_size, page_number + page_size);
-}
-
 router.get('/', requireAuth, async function (req, res, next) {
     try {
         const email = req.session.user.email;
