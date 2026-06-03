@@ -55,7 +55,7 @@ const blogSchema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true,
-        maxLength: 1000,
+        maxLength: 2000,
     },
     author: {
         type: mongoose.Schema.Types.ObjectId,

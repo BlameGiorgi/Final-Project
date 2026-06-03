@@ -11,9 +11,23 @@ const requireAuth = (req, res, next) => {
     }
 }
 
-router.get('/', requireAuth, function (req, res, next) {
-    const email = req.session.user.email;
-    res.render('blogs', {email});
+
+function paginate(array, page_size, page_number) {
+    return array.slice((page_number - 1) * page_size, page_number + page_size);
+}
+
+router.get('/', requireAuth, async function (req, res, next) {
+    try {
+        const email = req.session.user.email;
+
+        const recentBlogPosts = await Blog.find({})
+            .sort({date: -1})
+            .populate('author', 'email -_id');
+        res.render('blogs', {email, recentBlogPosts});
+    } catch (e) {
+        console.error(e);
+        next(e);
+    }
 });
 
 router.get('/new', requireAuth, function (req, res, next) {
@@ -54,7 +68,7 @@ router.post('/new', requireAuth, async function (req, res, next) {
         const newBlog = await Blog(newBlogObj);
         await newBlog.save();
         res.redirect('/blogs');
-    } catch (e){
+    } catch (e) {
         console.log(e)
     }
 
