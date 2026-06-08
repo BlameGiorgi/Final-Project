@@ -21,11 +21,12 @@
     THE BLOG
 </h1>
 
-<p class="blogs-paragraph">
+
+<p class="blogs-paragraph container">
     Recent blog posts
 </p>
+<div class="new-container container">
 
-<div class="new-container">
     <div class="posts-container">
 
         <div class="review-blog">
@@ -71,7 +72,7 @@
                     <p class="author"></p>
                     <p class="title">    <%= recentBlogPosts[2].title %>
                     </p>
-                    <p class="description">
+                    <p class="description modify">
                         <%= recentBlogPosts[2].description %>
                     </p>
                     <div class="categories">
@@ -85,7 +86,7 @@
     </div>
 </div>
 
-<div class="wide-card-wrapper">
+<div class="wide-card-wrapper container">
     <div class="wide-card">
         <img src="/images/grid.jpg" alt="Grid">
         <div class="wide-card-texts">
@@ -107,10 +108,10 @@
     </div>
 </div>
 
-<p class="blogs-paragraph all-posts-label">All blog posts</p>
+<p class="blogs-paragraph all-posts-label container">All blog posts</p>
 
-<div class="all-posts-wrapper">
-    <div class="all-posts-grid">
+<div class="all-posts-wrapper container">
+    <div class="all-posts-grid container">
         <% recentBlogPosts.forEach(function(blog) { %>
             <div class="post-card">
                 <%= blog.author.email %>
@@ -118,13 +119,13 @@
                 <img src="/images/walsh.jpg" alt="walsh">
                 <p class="author">
                 <p class="author"></p>
-                <p class="title"></p></p>
+                <p class="title"><%= blog.title %></p></p>
                 <p class="title card-title">
 
                     <img class="arrow-icon" src="/images/icon.svg" alt="Arrow">
                 </p>
                 <p class="description">
-
+                    <%= blog.description %>
                 </p>
                 <div class="categories">
                     <p class="category ux-design">Design</p>
