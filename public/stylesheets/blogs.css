@@ -1,5 +1,7 @@
-body {
-    margin-left: 112px
+body {;
+}
+.api-blog-text {
+    max-width: 248px;
 }
 
 .blog-title {
