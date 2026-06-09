@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require('../models/User');
 const Blog = require('../models/Blog');
 
+
 const requireAuth = (req, res, next) => {
     if (req.session.user) {
         next()
@@ -11,19 +12,12 @@ const requireAuth = (req, res, next) => {
     }
 }
 
-
 router.get('/', requireAuth, async function (req, res, next) {
-    try {
-        const email = req.session.user.email;
+    const email = req.session.user.email;
 
-        const recentBlogPosts = await Blog.find({})
-            .sort({date: -1})
-            .populate('author', 'email -_id');
-        res.render('blogs', {email, recentBlogPosts});
-    } catch (e) {
-        console.error(e);
-        next(e);
-    }
+    const blogs = await Blog.find().sort({date: -1}).populate("author", 'email')
+
+    res.render('blogs', {email, blogs});
 });
 
 router.get('/new', requireAuth, function (req, res, next) {
@@ -64,7 +58,7 @@ router.post('/new', requireAuth, async function (req, res, next) {
         const newBlog = await Blog(newBlogObj);
         await newBlog.save();
         res.redirect('/blogs');
-    } catch (e) {
+    } catch (e){
         console.log(e)
     }
 

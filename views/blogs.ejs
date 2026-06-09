@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sen:wght@400..800&display=swap"
           rel="stylesheet">
-    <link rel="shortcut icon" href="./images/blog-icon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/favicon.svg" type="image/x-icon">
 </head>
 <body>
 <%- include('partials/header', {email: email}); %>
@@ -21,121 +21,119 @@
     THE BLOG
 </h1>
 
-
-<p class="blogs-paragraph container">
-    Recent blog posts
-</p>
-<div class="new-container container">
-
-    <div class="posts-container">
-
-        <div class="review-blog">
-            <img src="/images/ux.jpg" alt="image">
-            <p class="author"></p>
-            <p class="title">
-                <%= recentBlogPosts[0].title %>
-                <img class="arrow-icon" src="/images/icon.svg" alt="Arrow">
-            </p>
-            <p class="description">
-                <%= recentBlogPosts[0].description %>
-
-            </p>
-            <div class="categories">
-                <p class="ux-design category">Design</p>
-                <p class="ux-research category">Research</p>
-                <p class="ux-presentation category">Presentation</p>
+<div class="container recent-blogs-wrapper">
+    <h4 class="title">Recent blog posts</h4>
+    <div class="row-1">
+        <div class="col-1">
+            <div class="media">
+                <figure class="thumbnail-wrapper">
+                    <img src="/images/ux.jpg" alt="Thumbnail 1">
+                </figure>
+                <div class="blog-meta">
+                    <p><%= blogs[0].author.email %></p> <span> • </span>
+                    <p><%= blogs[0].date.getDate() %> <%= blogs[0].date.toLocaleString('default', {month: 'short'}) %> <%= blogs[0].date.getFullYear() %></p>
+                </div>
+                <figure class="blog-title-wrapper">
+                    <a href="/"><%= blogs[0].title %></a>
+                    <img src="/images/icon.svg" alt="Arrow up icon">
+                </figure>
+                <div class="description-wrapper">
+                    <p><%= blogs[0].description %></p>
+                </div>
             </div>
         </div>
+        <div class="col-2">
 
-        <div class="small-blog">
-            <div class="migrating-blog">
-                <img src="/images/migrating.jpg" alt="image">
-                <div class="migrating-texts">
-                    <p class="author"></p>
-                    <p class="title">
-                        <%= recentBlogPosts[1].title %>
-                    </p>
-                    <p class="description">
-                        <%= recentBlogPosts[1].description %>
-
-                    </p>
-                    <div class="categories">
-                        <p class="migrating-design category">Design</p>
-                        <p class="migrating-research category">Research</p>
+            <div class="blog-title-small-text-1">
+                <figure class="thumbnail-wrapper-small">
+                    <img src="/images/migrating.jpg" alt="Thumbnail 1">
+                </figure>
+                <div class="text-1">
+                    <div class="blog-meta-2">
+                        <p><%= blogs[1].author.email %></p> <span> • </span>
+                        <p><%= blogs[1].date.getDate() %> <%= blogs[1].date.toLocaleString('default', {month: 'short'}) %> <%= blogs[0].date.getFullYear() %></p>
+                    </div>
+                    <figure class="blog-title-wrappper-small">
+                        <a href="/"><%= blogs[1].title %></a>
+                        <img src="/images/icon.svg" alt="Arrow up icon">
+                    </figure>
+                    <div class="description-wrapper-small">
+                        <p><%= blogs[1].description %></p>
                     </div>
                 </div>
             </div>
 
-            <div class="api-blog">
-                <img src="/images/api.jpg" alt="img">
-                <div class="api-blog-text">
-                    <p class="author"></p>
-                    <p class="title">    <%= recentBlogPosts[2].title %>
-                    </p>
-                    <p class="description modify">
-                        <%= recentBlogPosts[2].description %>
-                    </p>
-                    <div class="categories">
-                        <p class="category api-design">Design</p>
-                        <p class="category api-research">Research</p>
+
+            <div class="blog-title-small-text-2">
+                <figure class="thumbnail-wrapper-small">
+                    <img src="/images/api.jpg" alt="Thumbnail 1">
+                </figure>
+                <div class="text-2">
+                    <div class="blog-meta-2">
+                        <p><%= blogs[2].author.email %></p> <span> • </span>
+                        <p> <%= blogs[2].date.getDate() %> <%= blogs[2].date.toLocaleString('default', {month: 'short'}) %> <%= blogs[0].date.getFullYear() %></p>
+                    </div>
+                    <figure class="blog-title-wrapper-small">
+                        <a href="/"><%= blogs[2].title %></a>
+                        <img src="/images/icon.svg" alt="Arrow up icon">
+                    </figure>
+                    <div class="description-wrapper-small">
+                        <p><%= blogs[2].description %></p>
                     </div>
                 </div>
             </div>
+
+
         </div>
 
     </div>
-</div>
-
-<div class="wide-card-wrapper container">
-    <div class="wide-card">
-        <img src="/images/grid.jpg" alt="Grid">
-        <div class="wide-card-texts">
-            <p class="author"></p>
-            <p class="title wide-title">
-                <%= recentBlogPosts[3].title %>
-
-                <img class="arrow-icon" src="/images/icon.svg" alt="Arrow">
-            </p>
-            <p class="description">
-                <%= recentBlogPosts[3].description %>
-
-            </p>
-            <div class="categories">
-                <p class="category ux-design">Design</p>
-                <p class="category ux-research">Interface</p>
+    <div class="col-3">
+        <div class="blog-title-bottom-text-3">
+            <figure class="thumbnail-wrapper-bottom">
+                <img src="/images/grid.jpg" alt="Thumbnail 1">
+            </figure>
+            <div class="text-3">
+                <div class="blog-meta-2">
+                    <p><%= blogs[3].author.email %></p> <span> • </span>
+                    <p><%= blogs[3].date.getDate() %> <%= blogs[3].date.toLocaleString('default', {month: 'short'}) %> <%= blogs[0].date.getFullYear() %></p>
+                </div>
+                <figure class="blog-title-wrapper-bottom">
+                    <a href="/"><%= blogs[3].title %></a>
+                    <img src="/images/icon.svg" alt="Arrow up icon">
+                </figure>
+                <div class="description-wrapper-bottom">
+                    <p><%= blogs[3].description %></p>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
-<p class="blogs-paragraph all-posts-label container">All blog posts</p>
-
-<div class="all-posts-wrapper container">
-    <div class="all-posts-grid container">
-        <% recentBlogPosts.forEach(function(blog) { %>
+<div class="all-posts-grid container">
+    <h4 class="title-2">All blog posts</h4>
+    <div class=" all-posts-wrapper container">
+        <% blogs.forEach(function(blog) { %>
             <div class="post-card">
-                <%= blog.author.email %>
-                - <%= blog.date.getDate() %> <%= blog.date.toLocaleString('en-US', {month: 'short'}) %> <%= blog.date.getFullYear() %>
-                <img src="/images/walsh.jpg" alt="walsh">
-                <p class="author">
-                <p class="author"></p>
-                <p class="title"><%= blog.title %></p></p>
-                <p class="title card-title">
-                    <img class="arrow-icon" src="/images/icon.svg" alt="Arrow">
-                </p>
-                <p class="description">
-                    <%= blog.description %>
-                </p>
-                <div class="categories">
-                    <p class="category ux-design">Design</p>
-                    <p class="category ux-research">Research</p>
+
+                <figure class="all-blog-image-wrapper">
+                    <img src="/images/mountains.jpg" alt="mountains">
+                </figure>
+                <div class="text-4">
+                    <div class="blog-meta">
+                        <p><%= blog.author.email %></p> <span> • </span>
+                        <p><%= blog.date.getDate() %> <%= blog.date.toLocaleString('default', {month: 'short'}) %> <%= blog.date.getFullYear() %></p>
+                    </div>
+                    <div class="all-blog-arrow">
+                        <p><%= blog.title %> </p>
+                        <p><img class="arrow-icon" src="/images/icon.svg" alt="Arrow"></p>
+                    </div>
+                    <p class="description">
+                        <%= blog.description %>
+                    </p>
                 </div>
             </div>
         <% }); %>
     </div>
-
-    <%- include('partials/footer'); %>
-
 </div>
+<%- include('partials/footer'); %>
 </body>
 </html>
