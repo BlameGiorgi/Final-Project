@@ -88,7 +88,7 @@
     }
 
     .text-4 {
-        width: 326px;
+        width: 280px;
     }
 
     .media {
@@ -108,7 +108,9 @@
     .text-2 {
         width: 330px;
     }
-
+.all-blog-image-wrapper img {
+    width: 80%;
+}
 }
 
 .recent-blogs-wrapper {
@@ -286,10 +288,7 @@
     align-items: center;
 }
 
-.all-blog-image-wrapper {
-    width: 384px;
-    height: 240px;
-}
+
 
 .title-2 {
     margin-top: 60px;
