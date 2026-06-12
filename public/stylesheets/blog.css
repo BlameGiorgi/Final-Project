@@ -1,0 +1,120 @@
+.blog-details-wrapper {
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 32px;
+}
+
+.recent-blogs-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 342px;
+}
+
+.recent-blogs-wrapper h2 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    color: #1A1A1A;
+    margin-top: 78px;
+}
+
+.blog-title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.blog-title-wrapper a {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    color: rgba(26, 26, 26, 1);
+}
+
+.meta {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #6941C6;
+}
+
+.description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #667085;
+    margin-top: 8px;
+}
+
+.blog-content {
+    margin-top: 78px;
+}
+
+.Newsletter {
+    margin-top: 32px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.subtitle {
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: rgba(127, 86, 217, 1);
+}
+
+.title {
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 60px;
+    letter-spacing: -2%;
+    text-align: center;
+}
+
+.description-2 {
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #667085;
+
+}
+
+.privacy-note {
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(192, 197, 208, 1);
+}
+
+.email {
+    width: 360px;
+    height: 48px;
+    border-radius: 8px;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+.submit {
+    width: 118px;
+    height: 48px;
+    border-radius: 8px;
+    background-color: rgba(127, 86, 217, 1);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.form-group {
+    gap: 18px;
+}
